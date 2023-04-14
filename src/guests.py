@@ -18,3 +18,10 @@ class Guest:
             return self.room_flag.play_song(song)
         else:
             return "Please choose a song in the song list."
+        
+    def decrease_wallet(self,amount):
+        self.wallet -= amount
+
+    def pay_bill(self,amount):
+        self.room_flag.decrease_tab(amount)
+        self.decrease_wallet(amount)

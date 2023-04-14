@@ -2,7 +2,6 @@ import unittest
 from src.guests import Guest
 from src.room import Room
 from src.songs import Song
-from src.functions import *
 
 class TestGuest(unittest.TestCase):
     def setUp(self):
@@ -46,9 +45,12 @@ class TestGuest(unittest.TestCase):
         result = self.guest1.choose_song(self.song2)
         self.assertEqual("Please choose a song in the song list.",result)
 
-    # def test_decrease_wallet(self):
-    #     self.guest1.decrease_wallet(10)
-    #     self.assertEqual(10,self.guest1.wallet)
+    def test_decrease_wallet(self):
+        self.guest1.decrease_wallet(10)
+        self.assertEqual(10,self.guest1.wallet)
 
-    # def test_pay_bill(self):
-    #     self.guest1.pay_bill(10)
+    def test_pay_bill(self):
+        self.guest1.enter_room(self.room1)
+        self.guest1.pay_bill(10)
+        self.assertEqual(10,self.guest1.wallet)
+        self.assertEqual(40,self.room1.tab)
