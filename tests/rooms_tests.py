@@ -9,8 +9,8 @@ class TestRoom(unittest.TestCase):
         self.room_test = Room("Green Room",1,100)
         self.song1 = Song("Waterloo","ABBA",2.5)
         self.song2 = Song("Intergalactic","Beastie Boys",3)
-        # self.guest1 = Guest("Dave",20,[])
-        # self.guest2 = Guest("Allan",30,[self.song1])
+        self.guest1 = Guest("Dave",20,[])
+        self.guest2 = Guest("Allan",30,[self.song1])
 
     def test_has_name(self):
         self.assertEqual("Green Room",self.room_test.name)
@@ -56,7 +56,7 @@ class TestRoom(unittest.TestCase):
         result = self.room_test.check_vacancy()
         self.assertEqual(True,result)
 
-    # def test_check_vacancy__fail(self):
-    #     self.guest1.enter_room(self.room_test)
-    #     result = self.room_test.check_vacancy()
-    #     self.assertEqual(False,result)
+    def test_check_vacancy__fail(self):
+        self.guest1.enter_room(self.room_test)
+        result = self.room_test.check_vacancy()
+        self.assertEqual(False,result)
