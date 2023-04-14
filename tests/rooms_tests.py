@@ -42,7 +42,7 @@ class TestRoom(unittest.TestCase):
     def test_play_song(self):
         self.room_test.add_song(self.song1)
         result = self.room_test.play_song(self.song1)
-        self.assertEqual("Waterloo by ABBA is playing",result)
+        self.assertEqual("Waterloo by ABBA is playing.",result)
 
     def test_increase_tab(self): 
         self.room_test.increase_tab(10) 

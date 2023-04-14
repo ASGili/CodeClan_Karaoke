@@ -39,12 +39,12 @@ class TestGuest(unittest.TestCase):
     def test_choose_song__pass(self):
         self.guest1.enter_room(self.room1)
         result = self.guest1.choose_song(self.song1)
-        self.assertEqual("Waterloo by ABBA is playing",result)
+        self.assertEqual("Waterloo by ABBA is playing.",result)
     
     def test_choose_song__fail(self):
         self.guest1.enter_room(self.room1)
         result = self.guest1.choose_song(self.song2)
-        self.assertEqual(None,result)
+        self.assertEqual("Please choose a song in the song list.",result)
 
     # def test_decrease_wallet(self):
     #     self.guest1.decrease_wallet(10)

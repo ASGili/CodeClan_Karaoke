@@ -13,7 +13,7 @@ class Room:
         return song_to_check in self.song_list
     
     def play_song(self,song_to_play):
-        result =f'{song_to_play.title} by {song_to_play.artist} is playing'
+        result =f'{song_to_play.title} by {song_to_play.artist} is playing.'
         return result
     
     def increase_tab(self,amount):

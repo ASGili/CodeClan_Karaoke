@@ -16,3 +16,5 @@ class Guest:
     def choose_song(self,song):
         if song in self.room_flag.song_list:
             return self.room_flag.play_song(song)
+        else:
+            return "Please choose a song in the song list."
