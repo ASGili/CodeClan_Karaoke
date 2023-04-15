@@ -9,8 +9,8 @@ class Guest:
         room.guest_list.append(self)
         self.room_flag = room
 
-    def leave_room(self,room):
-        room.guest_list.remove(self)
+    def leave_room(self):
+        self.room_flag.guest_list.remove(self)
         self.room_flag = ()
 
     def choose_song(self,song):
