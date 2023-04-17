@@ -31,7 +31,7 @@ class TestGuest(unittest.TestCase):
 
     def test_leave_room(self):
         self.guest1.enter_room(self.room1)
-        self.guest1.leave_room(self.room1)
+        self.guest1.leave_room()
         result = len(self.room1.guest_list)
         self.assertEqual(0,result)
 
